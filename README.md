@@ -40,6 +40,9 @@ A lightweight **5,000-row sample dataset** is included in this repository for ea
 
 ---
 
+
+
+
 ## 🔄 Project Workflow
 
 ```text
@@ -60,3 +63,7 @@ Power BI Data Model
 DAX Measures & KPIs
         ↓
 Interactive Business Dashboards
+```
+
+---
+
