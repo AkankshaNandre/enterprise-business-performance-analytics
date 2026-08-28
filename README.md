@@ -65,5 +65,20 @@ DAX Measures & KPIs
 Interactive Business Dashboards
 ```
 
----
+## 📊 Dashboard Previews
+
+### 1. Business Performance Overview
+![Business Performance Overview](Images/01_overview(2).png)
+
+### 2. Sales Performance
+![Sales Performance](Images/02_sales(1).png)
+
+### 3. Customer Analytics
+![Customer Analytics](Images/03_customers.png)
+
+### 4. Financial Performance
+![Financial Performance](Images/04_financials.png)
+
+### 5. Product Performance
+![Product Performance](Images/05_products.png)
 
