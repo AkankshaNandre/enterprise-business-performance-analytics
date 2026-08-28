@@ -31,6 +31,6 @@ Contains the SQL queries used for business analysis, including:
 - Budget variance
 - Yearly financial performance
 - Year-over-year revenue growth
-- Product and customer ranking
+- Product and customer ranking.
 
 The analysis uses SQL techniques including aggregation, `GROUP BY`, `CASE`, CTEs, `LAG()`, `RANK()`, and window functions.
