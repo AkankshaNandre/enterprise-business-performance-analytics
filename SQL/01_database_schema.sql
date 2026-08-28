@@ -19,8 +19,18 @@ CREATE TABLE Dim_Date
 SELECT *
 FROM Dim_Date;
 
+-- Enterprise Business Performance Analytics
+-- Database schema
+-- Creates the dimension and fact tables used for analysis in SQL Server.
 
+USE EnterpriseFinanceDB;
+GO
 
+-- Enterprise Business Performance Analytics
+-- Business analysis queries
+-- SQL queries used to validate the dataset and analyze financial,
+-- sales, customer, and product performance.
+    
 USE EnterpriseFinanceDB;
 GO
  
