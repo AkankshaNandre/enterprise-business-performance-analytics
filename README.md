@@ -1,257 +1,140 @@
-# 📊 Enterprise Business Performance Analytics
+# Enterprise Business Performance Analytics
 
-An end-to-end **Data Analytics & Business Intelligence portfolio project** demonstrating how **Python, SQL Server, and Power BI** can be used to generate, structure, analyze, and visualize enterprise financial, sales, customer, and product data.
+An end-to-end business intelligence project for analyzing sales, financial, customer, and product performance using **SQL Server, Python, and Power BI**.
 
-The project demonstrates the complete analytics lifecycle — from synthetic data generation and database design to KPI development and interactive executive dashboards.
+The project covers the full workflow from synthetic data generation and database design to analytical modeling, DAX calculations, and interactive reporting.
 
----
+## Overview
 
-## 🎯 Project Overview
+The objective was to build an enterprise reporting solution that allows business users to monitor performance across multiple dimensions and answer questions around revenue, profitability, customers, products, and budget performance.
 
-The objective of this project was to build a complete enterprise analytics solution capable of analyzing business performance across multiple dimensions.
+The full dataset contains approximately **250,000 transaction records**. A smaller **5,000-row sample** is included in the repository for review.
 
-The project covers:
+All data used in this project is synthetic.
 
-- Synthetic enterprise data generation using Python
-- Data preparation using Pandas and NumPy
-- SQL Server database and dimensional schema design
-- SQL-based business analysis
-- Power BI data modeling
-- DAX measure and KPI development
-- Interactive dashboard development
-- Sales, financial, customer, and product performance analysis
-- Business performance visualization and reporting
+## Dashboard
 
-The complete dataset contains approximately **250,000 financial transaction records**.
+The Power BI report consists of five pages designed for different areas of business analysis.
 
-A lightweight **5,000-row sample dataset** is included in this repository for easy review.
+### Executive Overview
 
-> **Note:** All data used in this project is synthetic and was created specifically for learning and portfolio demonstration purposes.
-
----
-
-## 🛠️ Tech Stack
-
-| Area | Technology |
-|---|---|
-| Programming | Python |
-| Data Manipulation | Pandas, NumPy |
-| Synthetic Data Generation | Faker |
-| Development Environment | Jupyter Notebook |
-| Database | Microsoft SQL Server |
-| SQL Environment | SQL Server Management Studio (SSMS) |
-| Data Visualization | Power BI |
-| BI Calculations | DAX |
-| Version Control | Git & GitHub |
-
----
-
-## 🔄 Project Workflow
-
-```text
-Python / Jupyter Notebook
-        ↓
-Synthetic Enterprise Data Generation
-        ↓
-Data Cleaning & Transformation
-        ↓
-CSV Dataset
-        ↓
-Microsoft SQL Server
-        ↓
-Dimensional Data Model
-        ↓
-SQL Business Analysis
-        ↓
-Power BI Data Model
-        ↓
-DAX Measures & KPIs
-        ↓
-Interactive Business Dashboards
-```
-
----
-
-## 🎯 Business Questions
-
-The analytics solution was designed to answer important business questions such as:
-
-- How are **revenue, profit, cost, and profit margin** changing over time?
-- Is the business meeting its **budget and forecast targets**?
-- Which **regions and countries** generate the highest revenue?
-- Which **products and categories** contribute most to business performance?
-- Who are the **highest-value customers**?
-- How is the **customer base growing over time**?
-- Which areas of the business are underperforming?
-- Which products generate strong revenue but lower profitability?
-- Where are the biggest opportunities for improving overall business performance?
-
----
-
-# 📊 Dashboard Previews
-
-The Power BI report contains five analytical dashboard pages covering executive, sales, customer, financial, and product performance.
-
----
-
-## 1️⃣ Business Performance Overview
-
-Provides an executive-level overview of business performance with key financial KPIs, trends, regional performance, and budget comparison.
+High-level view of revenue, profit, margin, budget performance, and business trends.
 
 ![Business Performance Overview](Images/01_overview.png)
 
----
+### Sales Performance
 
-## 2️⃣ Sales Performance
-
-Analyzes sales performance across time, geographic regions, and other business dimensions to identify major revenue drivers and trends.
+Analysis of sales trends and performance across regions, countries, and reporting periods.
 
 ![Sales Performance](Images/02_sales.png)
 
----
+### Customer Analysis
 
-## 3️⃣ Customer Analytics
-
-Explores customer performance, customer growth, revenue contribution, customer segmentation, and high-value customers.
+Customer-level analysis covering revenue contribution, customer growth, segmentation, and high-value accounts.
 
 ![Customer Analytics](Images/03_customers.png)
 
----
+### Financial Performance
 
-## 4️⃣ Financial Performance
-
-Tracks revenue, cost, profit, profit margin, budget, and forecast performance to evaluate the overall financial health of the business.
+Analysis of revenue, cost, profit, margin, budget, forecast, and financial variance.
 
 ![Financial Performance](Images/04_financials.png)
 
----
+### Product Performance
 
-## 5️⃣ Product Performance
-
-Analyzes product and category-level revenue, profitability, sales contribution, and overall product performance.
+Product and category-level analysis focused on revenue contribution, sales volume, and profitability.
 
 ![Product Performance](Images/05_products.png)
 
----
+## Business Requirements
 
-## 📈 Key KPIs
+The reporting solution was designed to answer the following questions:
 
-The Power BI solution includes key business performance indicators such as:
+- How are revenue and profitability changing over time?
+- How does actual performance compare with budget and forecast?
+- Which regions and countries contribute the most revenue?
+- Which customers have the highest business value?
+- How is the customer base developing over time?
+- Which products and categories drive revenue and profit?
+- Where are the main areas of underperformance?
 
-| KPI | Purpose |
+## Data & Architecture
+
+The analytical dataset contains transaction-level financial data connected to business dimensions including:
+
+| Dimension | Example Attributes |
 |---|---|
-| Total Revenue | Measures overall sales revenue |
-| Total Profit | Measures overall business profitability |
-| Total Cost | Tracks total operating/product costs |
-| Profit Margin % | Evaluates profitability relative to revenue |
-| Quantity Sold | Measures overall sales volume |
-| Budget | Tracks planned business performance |
-| Forecast | Represents expected business performance |
-| Budget Variance | Compares actual performance against budget |
-| Revenue Growth | Tracks changes in revenue over time |
-| Customer Count | Measures the active customer base |
-| Customer Growth | Tracks expansion of the customer base |
-| Product Performance | Evaluates contribution at product level |
+| Date | Reporting date and period |
+| Product | Product, category, cost, list price |
+| Customer | Customer, type, industry, location |
+| Region | Geographic sales region |
+| Salesperson | Sales ownership |
+| Department | Business department |
+| Currency | Transaction currency |
 
-These KPIs were developed using **DAX measures** to support dynamic filtering and interactive analysis within Power BI.
+The overall workflow is:
 
----
+```text
+Python
+  ↓
+Data Generation & Preparation
+  ↓
+SQL Server
+  ↓
+Data Modeling & SQL Analysis
+  ↓
+Power BI
+  ↓
+DAX Measures
+  ↓
+Interactive Reporting
+```
 
-## 🗄️ Data & Analytics Architecture
+## Analysis
 
-The project follows a structured analytics approach:
+### SQL
 
-### 🐍 Python
+SQL Server was used to structure the analytical data and perform business analysis before visualization.
 
-Python was used for:
+Analysis included:
 
-- Synthetic enterprise data generation
-- Data preparation
-- Data transformation
-- Creation of realistic business dimensions and transactions
+- Revenue and profit aggregation
+- Time-based performance analysis
+- Regional and country analysis
+- Customer performance
+- Product/category performance
+- Budget and forecast comparison
 
-Libraries used include:
+### Power BI / DAX
 
-- Pandas
-- NumPy
-- Faker
+The Power BI model was used to create reusable measures and interactive reporting logic.
 
-### 🗃️ SQL Server
+Core measures include:
 
-Microsoft SQL Server was used to:
+| Metric | Description |
+|---|---|
+| Revenue | Total sales revenue |
+| Cost | Total transaction cost |
+| Profit | Revenue less cost |
+| Profit Margin % | Profit as a percentage of revenue |
+| Budget Variance | Difference between actual and budget |
+| Forecast Variance | Difference between actual and forecast |
+| Customer Count | Distinct customer count |
+| Customer Growth | Development of the customer base over time |
+| Quantity Sold | Total units sold |
 
-- Store structured enterprise data
-- Organize analytical datasets
-- Perform SQL-based business analysis
-- Prepare data for reporting and visualization
+## Key Findings
 
-### 📊 Power BI
+This section documents the main findings identified during analysis.
 
-Power BI was used for:
+- Revenue and profitability can be monitored across reporting periods and geographic markets.
+- Customer analysis highlights differences in revenue contribution across accounts and segments.
+- Product-level analysis makes it possible to distinguish high-revenue products from high-profit products.
+- Budget and forecast comparisons provide visibility into areas where actual performance deviates from plan.
 
-- Data modeling
-- Creating relationships between business entities
-- DAX calculations
-- KPI development
-- Interactive visualization
-- Executive reporting
-- Business performance analysis
+> Detailed numerical findings will be added as the analysis is finalized.
 
----
-
-## 🧩 Business Dimensions
-
-The analytical model connects financial transactions with several important business dimensions, including:
-
-- 📅 Date
-- 📦 Product
-- 👥 Customer
-- 🌍 Region
-- 👤 Salesperson
-- 🏢 Department
-- 💱 Currency
-
-This structure enables performance analysis across different areas of the organization.
-
----
-
-## 🔍 Analytical Focus
-
-The dashboards were designed to go beyond displaying raw totals and support business decision-making through:
-
-- Revenue trend analysis
-- Profitability analysis
-- Actual vs. Budget comparison
-- Actual vs. Forecast comparison
-- Regional performance analysis
-- Country-level performance
-- Customer segmentation
-- Customer growth analysis
-- High-value customer identification
-- Product contribution analysis
-- Product profitability analysis
-- Identification of high and low-performing business areas
-
----
-
-## 💡 Key Business Insights
-
-The dashboards enable decision-makers to identify:
-
-- Revenue and profitability trends over time
-- Differences between actual, budgeted, and forecasted performance
-- High-performing regions and markets
-- Major revenue-contributing customers
-- Customer acquisition and growth patterns
-- High-performing products and categories
-- Products with potential profitability improvement opportunities
-- Business areas requiring deeper investigation
-
-> Specific insights are derived dynamically from dashboard filters and selected reporting periods.
-
----
-
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 enterprise-business-performance-analytics/
@@ -264,80 +147,17 @@ enterprise-business-performance-analytics/
 │   └── 05_products.png
 │
 ├── data/
-│   └── Sample dataset
-│
 ├── notebooks/
-│   └── Python data generation and preparation
-│
 ├── sql/
-│   └── SQL analysis queries
-│
 ├── powerbi/
-│   └── Power BI report/project
-│
 └── README.md
 ```
 
----
+## Tools
 
-## 🚀 Skills Demonstrated
-
-This project demonstrates practical experience with:
-
-**Data Engineering & Preparation**
-- Python
-- Pandas
-- NumPy
-- Data cleaning and transformation
-- Synthetic data generation
-
-**Database & SQL**
-- Microsoft SQL Server
-- SQL querying
-- Relational data structures
-- Dimensional modeling
-- Business data analysis
-
-**Business Intelligence**
-- Power BI
-- DAX
-- Data modeling
-- KPI development
-- Interactive dashboard design
-- Data visualization
-
-**Business Analytics**
-- Financial analysis
-- Sales analysis
-- Customer analytics
-- Product analytics
-- Budget vs. Actual analysis
-- Trend analysis
-- Business performance reporting
-
----
-
-## 🎯 Project Purpose
-
-This project was developed as a portfolio project to demonstrate an end-to-end **Data Analytics and Business Intelligence workflow**.
-
-The focus was not only on creating visually engaging dashboards, but also on demonstrating the ability to:
-
-**Generate Data → Structure Data → Query Data → Model Data → Analyze Performance → Build KPIs → Visualize Results → Communicate Business Insights**
-
----
-
-## 👤 Author
-
-**Akanksha Nandre**
-
-Aspiring **Data Analyst / Business Intelligence Analyst** with experience in data analysis, SQL, Python, and Power BI.
-
-Interested in transforming complex datasets into meaningful business insights through analytics and visualization.
-
----
-
-⭐ If you found this project useful or interesting, feel free to explore the repository.
-
-
+**Python** — Pandas, NumPy, Faker  
+**Database** — Microsoft SQL Server, SSMS  
+**Business Intelligence** — Power BI, DAX  
+**Development** — Jupyter Notebook  
+**Version Control** — Git, GitHub
 
