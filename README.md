@@ -68,11 +68,10 @@ Interactive Business Dashboards
 ## 📊 Dashboard Previews
 
 ### 1. Business Performance Overview
-![Business Performance Overview](Images/01_overview(2).png)
+![Business Performance Overview](Images/01_overview.png)
 
 ### 2. Sales Performance
-![Sales Performance](Images/02_sales(1).png)
-
+![Sales Performance](Images/02_sales.png)
 ### 3. Customer Analytics
 ![Customer Analytics](Images/03_customers.png)
 
