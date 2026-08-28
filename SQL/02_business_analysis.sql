@@ -133,5 +133,83 @@ FROM Master_Finance
 GROUP BY DateKey / 10000
 ORDER BY SalesYear;
 
+-- ============================================================
+-- 11. Year-over-year revenue growth
+-- ============================================================
 
+WITH YearlyRevenue AS
+(
+    SELECT
+        DateKey / 10000 AS SalesYear,
+        SUM(Revenue) AS TotalRevenue
+    FROM Master_Finance
+    GROUP BY DateKey / 10000
+)
+
+SELECT
+    SalesYear,
+    TotalRevenue,
+    LAG(TotalRevenue) OVER (ORDER BY SalesYear) AS PreviousYearRevenue,
+    ROUND(
+        100.0 *
+        (TotalRevenue - LAG(TotalRevenue) OVER (ORDER BY SalesYear))
+        / NULLIF(LAG(TotalRevenue) OVER (ORDER BY SalesYear), 0),
+        2
+    ) AS RevenueGrowthPct
+FROM YearlyRevenue
+ORDER BY SalesYear;
+
+
+-- ============================================================
+-- 12. Product revenue ranking
+-- ============================================================
+
+WITH ProductPerformance AS
+(
+    SELECT
+        ProductName,
+        SUM(Revenue) AS TotalRevenue,
+        SUM(Profit) AS TotalProfit
+    FROM Master_Finance
+    GROUP BY ProductName
+)
+
+SELECT
+    ProductName,
+    TotalRevenue,
+    TotalProfit,
+    RANK() OVER (ORDER BY TotalRevenue DESC) AS RevenueRank
+FROM ProductPerformance
+ORDER BY RevenueRank;
+
+
+-- ============================================================
+-- 13. Customer revenue ranking
+-- ============================================================
+
+WITH CustomerPerformance AS
+(
+    SELECT
+        CustomerName,
+        SUM(Revenue) AS TotalRevenue,
+        SUM(Profit) AS TotalProfit
+    FROM Master_Finance
+    GROUP BY CustomerName
+)
+
+SELECT
+    CustomerName,
+    TotalRevenue,
+    TotalProfit,
+    RANK() OVER (ORDER BY TotalRevenue DESC) AS CustomerRevenueRank
+FROM CustomerPerformance
+ORDER BY CustomerRevenueRank;
+
+
+-- ============================================================
+-- 14. Product count
+-- ============================================================
+
+SELECT COUNT(*) AS TotalProducts
+FROM Dim_Product;
 
